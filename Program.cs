@@ -17,6 +17,19 @@ namespace LINQ02
             //    Console.WriteLine(p.ProductName + " - " + p.UnitPrice);
             //} 
             #endregion
+
+            #region Question02
+
+            var result2 = Source.ProductList
+                .Skip(5)
+                .Take(5);
+                
+            foreach (var p in result2)
+            {
+                Console.WriteLine(p.ProductName);
+            }
+
+            #endregion
         }
     }
 }
