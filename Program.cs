@@ -43,6 +43,16 @@ namespace LINQ02
             //}
 
             #endregion
+
+            #region Question04
+
+            //bool result4 = Source.ProductList
+            //    .Where(p => p.Category == "Seafood")
+            //    .All(p => p.UnitsInStock > 0);
+
+            //Console.WriteLine(result4);
+
+            #endregion
         }
     }
 }
