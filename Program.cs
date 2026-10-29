@@ -20,14 +20,27 @@ namespace LINQ02
 
             #region Question02
 
-            var result2 = Source.ProductList
-                .Skip(5)
-                .Take(5);
-                
-            foreach (var p in result2)
-            {
-                Console.WriteLine(p.ProductName);
-            }
+            //var result2 = Source.ProductList
+            //    .Skip(5)
+            //    .Take(5);
+
+            //foreach (var p in result2)
+            //{
+            //    Console.WriteLine(p.ProductName);
+            //}
+
+            #endregion
+
+            #region Question03
+
+            //var result3 = Source.ProductList
+            //    .OrderBy(p => p.UnitPrice)
+            //    .TakeWhile(p => p.UnitPrice < 25);
+
+            //foreach (var p in result3)
+            //{
+            //    Console.WriteLine(p.ProductName + " - " + p.UnitPrice);
+            //}
 
             #endregion
         }
