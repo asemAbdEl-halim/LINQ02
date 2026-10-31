@@ -118,26 +118,35 @@ namespace LINQ02
 
             #region Question09
 
-            var result9 =
-                 from c in Source.CustomerList
-                 group c by c.Country into countryGroup
-                 select new
-                 {
-                     Country = countryGroup.Key,
-                     Count = countryGroup.Count(),
-                     TotalOrderValue = countryGroup
-                         .SelectMany(c => c.Orders)
-                         .Sum(o => o.Total)
-                 };
-                 
-            foreach (var item in result9)
-            {
-                Console.WriteLine(
-                    item.Country + " - Customers: " +
-                    item.Count + " - Total Order Value: " +
-                    item.TotalOrderValue
-                );
-            }
+            //var result9 =
+            //     from c in Source.CustomerList
+            //     group c by c.Country into countryGroup
+            //     select new
+            //     {
+            //         Country = countryGroup.Key,
+            //         Count = countryGroup.Count(),
+            //         TotalOrderValue = countryGroup
+            //             .SelectMany(c => c.Orders)
+            //             .Sum(o => o.Total)
+            //     };
+
+            //foreach (var item in result9)
+            //{
+            //    Console.WriteLine(
+            //        item.Country + " - Customers: " +
+            //        item.Count + " - Total Order Value: " +
+            //        item.TotalOrderValue
+            //    );
+            //}
+
+            #endregion
+
+            #region Question10
+
+            int result10 = Source.ProductList
+                .Sum(p => p.UnitsInStock);
+
+            Console.WriteLine("Total Units in Stock: " + result10);
 
             #endregion
         }
