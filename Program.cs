@@ -229,11 +229,28 @@ namespace LINQ02
 
             #region Question16
 
-            var result16 = Source.ProductList
-                  .First(p => p.UnitPrice > 50);
+            //var result16 = Source.ProductList
+            //      .First(p => p.UnitPrice > 50);
 
-            Console.WriteLine(result16.ProductName);
-            Console.WriteLine(result16.UnitPrice);
+            //Console.WriteLine(result16.ProductName);
+            //Console.WriteLine(result16.UnitPrice);
+
+            #endregion
+
+            #region Question17
+
+            var result17 = Source.ProductList
+                 .FirstOrDefault(p => p.UnitPrice > 500);
+
+            if (result17 != null)
+            {
+                Console.WriteLine(result17.ProductName);
+                Console.WriteLine(result17.UnitPrice);
+            }
+            else
+            {
+                Console.WriteLine("No product found.");
+            }
 
             #endregion
         }
