@@ -152,14 +152,28 @@ namespace LINQ02
 
             #region Question11
 
-            var cheapestPrice = Source.ProductList
-                 .Min(p => p.UnitPrice);
+            //var cheapestPrice = Source.ProductList
+            //     .Min(p => p.UnitPrice);
 
-            var mostExpensivePrice = Source.ProductList
-                .Max(p => p.UnitPrice);
+            //var mostExpensivePrice = Source.ProductList
+            //    .Max(p => p.UnitPrice);
 
-            Console.WriteLine("Cheapest Price: " + cheapestPrice);
-            Console.WriteLine("Most Expensive Price: " + mostExpensivePrice);
+            //Console.WriteLine("Cheapest Price: " + cheapestPrice);
+            //Console.WriteLine("Most Expensive Price: " + mostExpensivePrice);
+
+            #endregion
+
+            #region Question12
+
+
+            var result12 = Source.ProductList
+                .Select(p => p.Category)
+                .Distinct();
+
+            foreach (var category in result12)
+            {
+                Console.WriteLine(category);
+            }
 
             #endregion
         }
