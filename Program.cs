@@ -53,6 +53,17 @@ namespace LINQ02
             //Console.WriteLine(result4);
 
             #endregion
+
+            #region Question05
+
+
+            int[] ids = { 3, 9, 13, 18 };
+
+            bool result5 = ids.Contains(9);
+
+            Console.WriteLine(result5);
+
+            #endregion
         }
     }
 }
