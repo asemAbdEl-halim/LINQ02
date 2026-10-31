@@ -256,10 +256,22 @@ namespace LINQ02
 
             #region Question18
 
-            var result18 = Enumerable.Range(1, 10)
-                  .Select(n => 7 * n);
+            //var result18 = Enumerable.Range(1, 10)
+            //      .Select(n => 7 * n);
 
-            foreach (var number in result18)
+            //foreach (var number in result18)
+            //{
+            //    Console.WriteLine(number);
+            //}
+
+            #endregion
+
+            #region Question19
+
+            var result19 = Enumerable.Range(1, 30)
+                .Where(n => n % 2 == 0);
+
+            foreach (var number in result19)
             {
                 Console.WriteLine(number);
             }
