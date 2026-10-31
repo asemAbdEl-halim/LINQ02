@@ -178,14 +178,31 @@ namespace LINQ02
 
             #region Question13
 
-            int[] setA = { 1, 3, 5, 7, 9, 11, 13 };
-            int[] setB = { 3, 6, 9, 12, 15, 13 };
+            //int[] setA = { 1, 3, 5, 7, 9, 11, 13 };
+            //int[] setB = { 3, 6, 9, 12, 15, 13 };
 
-            var result13 = setA.Except(setB);
+            //var result13 = setA.Except(setB);
 
-            foreach (var id in result13)
+            //foreach (var id in result13)
+            //{
+            //    Console.WriteLine(id);
+            //}
+
+            #endregion
+
+            #region Question14
+
+            string[] list1 = { "Germany", "France", "UK", "Spain" };
+            string[] list2 = { "france", "SPAIN", "Italy" };
+
+            var result14 = list1.Except(
+                list2,
+                StringComparer.OrdinalIgnoreCase
+            );
+
+            foreach (var country in result14)
             {
-                Console.WriteLine(id);
+                Console.WriteLine(country);
             }
 
             #endregion
