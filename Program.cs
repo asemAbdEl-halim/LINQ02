@@ -82,20 +82,36 @@ namespace LINQ02
 
             #region Question07
 
-            var result7 = Source.ProductList
-                 .GroupBy(
-                     p => p.Category,
-                     p => p.ProductName
-                 );
-                 
-            foreach (var group in result7)
-            {
-                Console.WriteLine(group.Key);
+            //var result7 = Source.ProductList
+            //     .GroupBy(
+            //         p => p.Category,
+            //         p => p.ProductName
+            //     );
 
-                foreach (var name in group)
-                {
-                    Console.WriteLine("  " + name);
-                }
+            //foreach (var group in result7)
+            //{
+            //    Console.WriteLine(group.Key);
+
+            //    foreach (var name in group)
+            //    {
+            //        Console.WriteLine("  " + name);
+            //    }
+            //}
+
+            #endregion
+
+            #region Question08
+
+            var result8 = Source.ProductList
+                .GroupBy(p => p.Category)
+                .Where(group => group.Count() > 3);
+               
+            foreach (var group in result8)
+            {
+                Console.WriteLine(
+                    group.Key + " - " +
+                    group.Count()
+                );
             }
 
             #endregion
