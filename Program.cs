@@ -57,11 +57,26 @@ namespace LINQ02
             #region Question05
 
 
-            int[] ids = { 3, 9, 13, 18 };
+            //int[] ids = { 3, 9, 13, 18 };
 
-            bool result5 = ids.Contains(9);
+            //bool result5 = ids.Contains(9);
 
-            Console.WriteLine(result5);
+            //Console.WriteLine(result5);
+
+            #endregion
+
+            #region Question06
+
+            var result6 = Source.ProductList
+               .GroupBy(p => p.Category);
+
+            foreach (var group in result6)
+            {
+                Console.WriteLine(
+                    group.Key + " - Count: " +
+                    group.Count()
+                );
+            }
 
             #endregion
         }
