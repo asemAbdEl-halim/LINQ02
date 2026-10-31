@@ -1,4 +1,5 @@
 ﻿using LINQ02.DataSources;
+using LINQ02.Models;
 
 namespace LINQ02
 {
@@ -192,17 +193,36 @@ namespace LINQ02
 
             #region Question14
 
-            string[] list1 = { "Germany", "France", "UK", "Spain" };
-            string[] list2 = { "france", "SPAIN", "Italy" };
+            //string[] list1 = { "Germany", "France", "UK", "Spain" };
+            //string[] list2 = { "france", "SPAIN", "Italy" };
 
-            var result14 = list1.Except(
-                list2,
-                StringComparer.OrdinalIgnoreCase
-            );
+            //var result14 = list1.Except(
+            //    list2,
+            //    StringComparer.OrdinalIgnoreCase
+            //);
 
-            foreach (var country in result14)
+            //foreach (var country in result14)
+            //{
+            //    Console.WriteLine(country);
+            //}
+
+            #endregion
+
+            #region Question15
+
+            Dictionary<int, Product> productsDictionary =
+                Source.ProductList.ToDictionary(p => p.ProductID);
+
+            if (productsDictionary.ContainsKey(18))
             {
-                Console.WriteLine(country);
+                Product product = productsDictionary[18];
+
+                Console.WriteLine(product.ProductName);
+                Console.WriteLine(product.UnitPrice);
+            }
+            else
+            {
+                Console.WriteLine("Product not found.");
             }
 
             #endregion
