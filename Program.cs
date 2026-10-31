@@ -210,20 +210,30 @@ namespace LINQ02
 
             #region Question15
 
-            Dictionary<int, Product> productsDictionary =
-                Source.ProductList.ToDictionary(p => p.ProductID);
+            //Dictionary<int, Product> productsDictionary =
+            //    Source.ProductList.ToDictionary(p => p.ProductID);
 
-            if (productsDictionary.ContainsKey(18))
-            {
-                Product product = productsDictionary[18];
+            //if (productsDictionary.ContainsKey(18))
+            //{
+            //    Product product = productsDictionary[18];
 
-                Console.WriteLine(product.ProductName);
-                Console.WriteLine(product.UnitPrice);
-            }
-            else
-            {
-                Console.WriteLine("Product not found.");
-            }
+            //    Console.WriteLine(product.ProductName);
+            //    Console.WriteLine(product.UnitPrice);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Product not found.");
+            //}
+
+            #endregion
+
+            #region Question16
+
+            var result16 = Source.ProductList
+                  .First(p => p.UnitPrice > 50);
+
+            Console.WriteLine(result16.ProductName);
+            Console.WriteLine(result16.UnitPrice);
 
             #endregion
         }
