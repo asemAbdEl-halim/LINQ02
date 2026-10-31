@@ -239,17 +239,29 @@ namespace LINQ02
 
             #region Question17
 
-            var result17 = Source.ProductList
-                 .FirstOrDefault(p => p.UnitPrice > 500);
+            //var result17 = Source.ProductList
+            //     .FirstOrDefault(p => p.UnitPrice > 500);
 
-            if (result17 != null)
+            //if (result17 != null)
+            //{
+            //    Console.WriteLine(result17.ProductName);
+            //    Console.WriteLine(result17.UnitPrice);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("No product found.");
+            //}
+
+            #endregion
+
+            #region Question18
+
+            var result18 = Enumerable.Range(1, 10)
+                  .Select(n => 7 * n);
+
+            foreach (var number in result18)
             {
-                Console.WriteLine(result17.ProductName);
-                Console.WriteLine(result17.UnitPrice);
-            }
-            else
-            {
-                Console.WriteLine("No product found.");
+                Console.WriteLine(number);
             }
 
             #endregion
