@@ -280,19 +280,39 @@ namespace LINQ02
 
             #region Question20
 
+            //var productNames = Source.ProductList
+            //    .Take(3)
+            //    .Select(p => p.ProductName);
+
+            //var customerNames = Source.CustomerList
+            //    .Take(3)
+            //    .Select(c => c.CustomerName);
+
+            //var result20 = productNames.Concat(customerNames);
+
+            //foreach (var name in result20)
+            //{
+            //    Console.WriteLine(name);
+            //}
+
+            #endregion
+
+            #region Question21
+
             var productNames = Source.ProductList
-                .Take(3)
                 .Select(p => p.ProductName);
 
             var customerNames = Source.CustomerList
-                .Take(3)
                 .Select(c => c.CustomerName);
 
-            var result20 = productNames.Concat(customerNames);
+            var result21 = productNames.Zip(
+                customerNames,
+                (product, customer) => product + " sold to " + customer
+            );
 
-            foreach (var name in result20)
+            foreach (var item in result21)
             {
-                Console.WriteLine(name);
+                Console.WriteLine(item);
             }
 
             #endregion
